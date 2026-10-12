@@ -151,3 +151,185 @@ footer .socialmedia a img {
   height: 32px;
   display: block;
 }
+
+.hero {
+  margin: 0;
+  padding: 0;
+}
+ 
+/* keep the hero large but not taller than the screen */
+.hero > img {
+  max-height: 70vh;
+  object-fit: cover;
+}
+ 
+/* company name link in the header */
+header p a {
+  color: var(--accent2-color);
+  font-family: var(--heading-font);
+  font-weight: bold;
+  text-decoration: none;
+}
+ 
+/* call to action sitting on the hero image */
+.hero .cta {
+  margin: 0;
+  background-color: white;
+  border-radius: 6px;
+}
+ 
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+  color: var(--accent1-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: var(--accent1-color);
+  color: white;
+}
+ 
+/* three-column grid: wide intro + newsletter sidebar, two photos, full-width list */
+.grid.home {
+  grid-template-columns: repeat(3, 1fr);
+}
+.home .purpose    { grid-column: 1 / 3; }
+.home .newsletter { grid-column: 3; grid-row: 1 / 3; }
+.home .rapids     { grid-column: 1; }
+.home .calm       { grid-column: 2; }
+.home .offerings  { grid-column: 1 / -1; }
+ 
+.home .offerings ul { margin-left: 2rem; }
+ 
+.newsletter {
+  margin: 16px;
+  padding: 16px;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+}
+.newsletter label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: bold;
+}
+.newsletter input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.25rem 0 1rem;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  font: inherit;
+}
+.newsletter button {
+  padding: 0.6rem 1.25rem;
+  border: 0;
+  border-radius: 4px;
+  background-color: var(--accent1-color);
+  color: #fff;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+.newsletter button:hover {
+  background-color: var(--primary-color);
+}
+ 
+/* narrow screens: let the layout flow to one column */
+@media (max-width: 880px) {
+  header, .grid, footer { width: 100%; }
+  .grid.home { grid-template-columns: 1fr; }
+  .home .purpose, .home .newsletter, .home .rapids,
+  .home .calm, .home .offerings {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .hero article {
+    position: static;
+    width: auto;
+  }
+}
+.trips-hero > img {
+  max-height: 45vh;
+}
+ 
+/* two-column grid of trip cards; intro, table and call to action span both columns */
+.grid.trips {
+  grid-template-columns: repeat(2, 1fr);
+}
+.trips .intro,
+.trips .trip-table,
+.trips .trips-cta {
+  grid-column: 1 / -1;
+}
+ 
+/* trip cards */
+.trip {
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
+}
+.trip img {
+  border-radius: 4px;
+}
+.trip h2 {
+  margin-top: 0.75rem;
+}
+.trip p {
+  margin: 8px 0;
+  padding: 0;
+}
+.trip dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--primary-color);
+}
+.trip dt {
+  font-weight: bold;
+}
+ 
+/* table */
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+caption {
+  padding-bottom: 8px;
+  text-align: left;
+  font-style: italic;
+}
+th, td {
+  padding: 10px 12px;
+  border: 1px solid var(--primary-color);
+  text-align: left;
+}
+thead th {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+tbody tr:nth-child(even) {
+  background-color: #eaf2f8;
+}
+ 
+/* closing call to action */
+.trips-cta {
+  text-align: center;
+  background-color: var(--accent1-color);
+  color: #fff;
+  border-radius: 6px;
+}
+.trips-cta h2 {
+  color: #fff;
+}
+ 
+@media (max-width: 880px) {
+  .grid.trips { grid-template-columns: 1fr; }
+}
+ 
